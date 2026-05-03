@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAU — Hero có preload</title>
+
+  <!-- ✅ Preload ảnh hero NGAY trong <head>, TRƯỚC khi CSS được parse.
+       Trình duyệt sẽ fetch ảnh song song với CSS thay vì chờ. -->
+  <link
+    rel="preload"
+    as="image"
+    href="hero_bg.jpg"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero hero--demo">
+    <div class="hero__overlay">
+      <p class="badge badge--after">SAU · có preload</p>
+      <h1>Khám phá đại dương xanh</h1>
+      <p class="lede">
+        Ảnh nền đã được fetch sớm nhờ <code>&lt;link rel="preload"&gt;</code>.
+      </p>
+      <a class="btn" href="index.html">← Quay lại</a>
+    </div>
+  </header>
+</body>
+</html>

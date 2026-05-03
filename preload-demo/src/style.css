@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  color: #1b2330;
+  background: #f4f6fb;
+  line-height: 1.6;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c7qv8.woff2")
+    format("woff2");
+}
+
+code {
+  background: #eef1f8;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+kbd {
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.05em 0.45em;
+  font-size: 0.85em;
+  font-family: inherit;
+}
+
+/* ===== Landing ===== */
+.landing {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.landing h1 {
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.6rem);
+  margin: 0 0 0.5rem;
+}
+
+.landing .sub {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-top: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: block;
+  padding: 1.4rem 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.card h2 {
+  margin: 0.6rem 0 0.4rem;
+}
+
+.card p {
+  margin: 0;
+  color: #475569;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.card--before .tag {
+  background: #dc2626;
+}
+.card--after .tag {
+  background: #16a34a;
+}
+
+.howto {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+}
+
+.howto h3 {
+  margin-top: 0;
+}
+
+/* ===== Hero (dùng chung cho before/after) ===== */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #334155; /* màu nền "chờ" khi ảnh chưa tải xong */
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1.5rem;
+}
+
+.hero__overlay {
+  max-width: 720px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+  margin: 0.6rem 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero .lede {
+  font-size: 1.15rem;
+  opacity: 0.92;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.badge--before {
+  background: #dc2626;
+}
+.badge--after {
+  background: #16a34a;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Explain section ===== */
+.explain {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.explain h2 {
+  margin-top: 0;
+}
+
+.note {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: #fff7ed;
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px;
+}
+
+.hero--demo {
+  background-image:
+    linear-gradient(rgba(5, 20, 40, 0.45), rgba(5, 20, 40, 0.45)),
+    url("hero_bg.jpg");
+}
+
+/* ===== Font preload demo ===== */
+.font-hero {
+  font-family: "Fraunces", "Georgia", serif;
+  background-image:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.14), transparent 55%),
+    linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.font-hero h1 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}

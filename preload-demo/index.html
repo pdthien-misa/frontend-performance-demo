@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo: Preload Image & Font</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+  <main class="landing">
+    <h1>Demo preload ảnh và font</h1>
+    <p class="sub">
+      So sánh thời điểm tài nguyên xuất hiện <strong>trước</strong> và
+      <strong>sau</strong> khi dùng <code>&lt;link rel="preload"&gt;</code>.
+    </p>
+
+    <section class="cards">
+      <a class="card card--before" href="src/bg-before.html">
+        <span class="tag">TRƯỚC</span>
+        <h2>Không preload</h2>
+        <p>
+          Trình duyệt chỉ phát hiện <code>background-image</code> sau khi đã
+          tải và parse xong CSS &rarr; hero loé lên màu trống trước khi ảnh
+          hiện.
+        </p>
+      </a>
+
+      <a class="card card--after" href="src/bg-after.html">
+        <span class="tag">SAU</span>
+        <h2>Có preload</h2>
+        <p>
+          Dùng <code>&lt;link rel="preload" as="image"&gt;</code> trong
+          <code>&lt;head&gt;</code> để trình duyệt tải ảnh sớm song song với
+          CSS &rarr; hero xuất hiện gần như ngay lập tức.
+        </p>
+      </a>
+    </section>
+
+    <section class="cards">
+      <a class="card card--before" href="src/font-before.html">
+        <span class="tag">TRƯỚC</span>
+        <h2>Font không preload</h2>
+        <p>
+          Font web chỉ bắt đầu tải sau khi <code>style.css</code> được parse
+          xong &rarr; chữ có thể bị FOUT/flash.
+        </p>
+      </a>
+
+      <a class="card card--after" href="src/font-after.html">
+        <span class="tag">SAU</span>
+        <h2>Font có preload</h2>
+        <p>
+          Dùng <code>&lt;link rel="preload" as="font"&gt;</code> để fetch font
+          sớm, giảm độ trễ khi render chữ.
+        </p>
+      </a>
+    </section>
+
+    <section class="howto">
+      <h3>Cách test cho thấy rõ khác biệt</h3>
+      <ol>
+        <li>Mở DevTools &rarr; tab <strong>Network</strong>.</li>
+        <li>
+          Bật throttling <strong>Slow 3G</strong> (hoặc <em>Fast 3G</em>) để
+          mô phỏng mạng chậm.
+        </li>
+        <li>
+          Tick <strong>Disable cache</strong>, sau đó nhấn
+          <kbd>Ctrl</kbd>+<kbd>F5</kbd> trên mỗi trang.
+        </li>
+        <li>
+          Quan sát cột <em>Waterfall</em>: ở trang <strong>bg-after</strong>,
+          ảnh hero bắt đầu được fetch sớm hơn nhiều so với trang
+          <strong>bg-before</strong>.
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

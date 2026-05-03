@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAU — Font có preload</title>
+
+  <link
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    href="https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c7qv8.woff2"
+    crossorigin
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero font-hero">
+    <div class="hero__overlay">
+      <p class="badge badge--after">SAU · có preload</p>
+      <h1>Âm vang của những con chữ</h1>
+      <p class="lede">
+        Font được fetch sớm ngay trong <code>&lt;head&gt;</code>, giúp chữ xuất
+        hiện mượt hơn khi render.
+      </p>
+      <a class="btn" href="index.html">← Quay lại</a>
+    </div>
+  </header>
+</body>
+</html>
